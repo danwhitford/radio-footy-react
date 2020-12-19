@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/radio-footy-react/static/css/main.9f3b873a.chunk.css",
-    "main.js": "/radio-footy-react/static/js/main.b6a8731b.chunk.js",
-    "main.js.map": "/radio-footy-react/static/js/main.b6a8731b.chunk.js.map",
+    "main.js": "/radio-footy-react/static/js/main.eb450eb8.chunk.js",
+    "main.js.map": "/radio-footy-react/static/js/main.eb450eb8.chunk.js.map",
     "runtime-main.js": "/radio-footy-react/static/js/runtime-main.df5f3018.js",
     "runtime-main.js.map": "/radio-footy-react/static/js/runtime-main.df5f3018.js.map",
     "static/js/2.5a3a1514.chunk.js": "/radio-footy-react/static/js/2.5a3a1514.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.df5f3018.js",
     "static/js/2.5a3a1514.chunk.js",
     "static/css/main.9f3b873a.chunk.css",
-    "static/js/main.b6a8731b.chunk.js"
+    "static/js/main.eb450eb8.chunk.js"
   ]
 }
