@@ -9,7 +9,7 @@ function App() {
   const [filterValue, setFilterValue] = useState("None");
 
   useEffect(() => {
-    fetch("https://wirelessfootball.co.uk/data.json")
+    fetch("https://shaftoe44.github.io/radio-footy/data.json")
       .then((r) => r.json())
       .then((j) => setMatchDays(j));
   }, [setMatchDays]);
