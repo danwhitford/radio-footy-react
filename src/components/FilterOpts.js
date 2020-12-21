@@ -59,12 +59,14 @@ const FilterOpts = ({
         options={filterCategoryOptions}
         value={filterCategoryOptions.find(o => o.value === filterCategory) || 'None'}
         isClearable
+        isSearchable={false}
       />
       {filterCategory !== "None" && (
           <Select
             options={filterValueOptions}
             onChange={(e) => setFilterValue(e.value)}
             value={filterValueOptions.find(o => o.value === filterValue) || 'None'}
+            isSearchable={filterCategory === 'team'}
           />
       )}
     </div>
