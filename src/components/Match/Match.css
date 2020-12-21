@@ -19,10 +19,13 @@
   animation-iteration-count: infinite;
 }
 
+.past {
+  opacity: 60%
+}
+
 .match-time {
   grid-column: 1;
   grid-row: 1;
-  font-family: Lora;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
@@ -35,7 +38,6 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  font-family: Lora;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -45,7 +47,6 @@
 .match-station {
   grid-column: 1;
   grid-row: 2;
-  font-family: Lora;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -55,7 +56,6 @@
 .match-competition {
   grid-column: 2;
   grid-row: 2;
-  font-family: Lora;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
