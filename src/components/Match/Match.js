@@ -1,21 +1,11 @@
 import React from "react";
 import "./Match.css";
-import addHours from 'date-fns/addHours'
-import { isAfter, isWithinInterval } from "date-fns";
-
-const isNowFn = starttime => {
-  const datetime = Date.parse(starttime)
-  return isWithinInterval(new Date(), {start: datetime, end: addHours(datetime, 2)})
-}
-
-const isPastFn = starttime => {
-  const datetime = Date.parse(starttime)
-  return isAfter(new Date(), addHours(datetime, 2))
-}
+import {isNowFn, isPastFn} from './utils'
 
 const Match = ({ title, station, competition, time, datetime }) => {
-  const isNow = isNowFn(datetime)
-  const isPast = isPastFn(datetime)
+  const now = new Date()
+  const isNow = isNowFn(now, datetime)
+  const isPast = isPastFn(now, datetime)
 
   return (
     <div className={`match ${isNow ? 'on-air' : ''} ${isPast ? 'past' : ''}`}>
