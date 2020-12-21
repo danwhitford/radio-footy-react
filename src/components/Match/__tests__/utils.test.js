@@ -24,10 +24,10 @@ test("is past works when game is in past", () => {
 
 test("is past works when game is on", () => {
     const res = isPastFn(fakeNow, '2020-12-01Z11:30')
-    expect(res).toEqual(true)
+    expect(res).toEqual(false)
 });
 
 test("is past works when game is in future", () => {
     const res = isPastFn(fakeNow, '2020-12-01Z12:30')
-    expect(res).toEqual(true)
+    expect(res).toEqual(false)
 });

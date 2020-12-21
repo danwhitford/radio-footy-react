@@ -1,5 +1,5 @@
 import addHours from 'date-fns/addHours'
-import { isAfter, isWithinInterval } from "date-fns";
+import { isBefore, isWithinInterval } from "date-fns";
 
 export const isNowFn = (now, starttime) => {
     const datetime = Date.parse(starttime)
@@ -8,5 +8,5 @@ export const isNowFn = (now, starttime) => {
 
 export const isPastFn = (now, starttime) => {
     const datetime = Date.parse(starttime)
-    return isAfter(now, addHours(datetime, 2))
+    return isBefore(addHours(datetime, 2), now)
 }
