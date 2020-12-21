@@ -3,16 +3,16 @@ import "./Match.css";
 import addHours from 'date-fns/addHours'
 import { isWithinInterval } from "date-fns";
 
-const isNow = (startTime) => {
-  const now = new Date()
-  const endDt = addHours(matchDt, 2)
-  return isWithinInterval(now, {start: startTime, end: addHours(startTime, 2)})
+const isNowFn = startime => {
+  const datetime = Date.parse(startime)
+  return isWithinInterval(new Date(), {start: datetime, end: addHours(datetime, 2)})
 }
 
-const Match = ({ title, station, competition, time }) => {
+const Match = ({ title, station, competition, time, datetime }) => {
+  const isNow = isNowFn(datetime)
 
   return (
-    <div className="match on-air">
+    <div className={`match ${isNow ? 'on-air' : ''}`}>
       <div className="match-time">{time}</div>
       <div className="match-title">{title}</div>
       <div className="match-station">{station}</div>
