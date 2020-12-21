@@ -42,32 +42,39 @@ const FilterOpts = ({
     { value: "team", label: "Team" },
     { value: "station", label: "Station" },
     { value: "competition", label: "Competition" },
-  ]
+  ];
 
-  const filterValueOptions = filterOptions().map(opt => {return {
-    value: opt,
-    label: opt,
-  }})
+  const filterValueOptions = filterOptions().map((opt) => {
+    return {
+      value: opt,
+      label: opt,
+    };
+  });
 
   return (
     <div>
       <Select
         placeholder="Filter by..."
         onChange={(e) => {
-          setFilterCategory(e ? e.value : 'None')
+          setFilterCategory(e ? e.value : "None");
         }}
         options={filterCategoryOptions}
-        value={filterCategoryOptions.find(o => o.value === filterCategory) || 'None'}
+        value={
+          filterCategoryOptions.find((o) => o.value === filterCategory) ||
+          "None"
+        }
         isClearable
         isSearchable={false}
       />
       {filterCategory !== "None" && (
-          <Select
-            options={filterValueOptions}
-            onChange={(e) => setFilterValue(e.value)}
-            value={filterValueOptions.find(o => o.value === filterValue) || 'None'}
-            isSearchable={filterCategory === 'team'}
-          />
+        <Select
+          options={filterValueOptions}
+          onChange={(e) => setFilterValue(e.value)}
+          value={
+            filterValueOptions.find((o) => o.value === filterValue) || "None"
+          }
+          isSearchable={filterCategory === "team"}
+        />
       )}
     </div>
   );
