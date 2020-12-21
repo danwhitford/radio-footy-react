@@ -39,9 +39,9 @@ const FilterOpts = ({
   };
 
   const filterCategoryOptions = [
-    { value: "team", label: "Team" },
-    { value: "station", label: "Station" },
     { value: "competition", label: "Competition" },
+    { value: "station", label: "Station" },
+    { value: "team", label: "Team" },
   ];
 
   const filterValueOptions = filterOptions().map((opt) => {

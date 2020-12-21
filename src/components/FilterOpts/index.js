@@ -1,2 +1,2 @@
-import FilterOpts from './FilterOpts'
-export default FilterOpts
+import FilterOpts from "./FilterOpts";
+export default FilterOpts;

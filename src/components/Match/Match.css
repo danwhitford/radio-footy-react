@@ -6,9 +6,15 @@
 }
 
 @keyframes pulse-red {
-  0%   {border-left: 4px solid red; }
-  50% { border-left: 4px solid white; }
-  100% {border-left: 4px solid red; }
+  0% {
+    border-left: 4px solid red;
+  }
+  50% {
+    border-left: 4px solid white;
+  }
+  100% {
+    border-left: 4px solid red;
+  }
 }
 
 .on-air {
@@ -20,7 +26,7 @@
 }
 
 .past {
-  opacity: 60%
+  opacity: 60%;
 }
 
 .match-time {

@@ -1,2 +1,2 @@
-import MatchDay from './MatchDay'
-export default MatchDay
+import MatchDay from "./MatchDay";
+export default MatchDay;
