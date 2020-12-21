@@ -8,27 +8,42 @@
 .match-time {
   grid-column: 1;
   grid-row: 1;
+  font-family: Lora;
+  font-style: normal;
+  font-weight: normal;
   font-size: 24px;
+  line-height: 31px;
 }
 
 .match-title {
   grid-column: 2;
   grid-row: 1;
-  font-size: 16px;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  font-family: Lora;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 .match-station {
   grid-column: 1;
   grid-row: 2;
-  overflow: hidden;
+  font-family: Lora;
+  font-style: normal;
+  font-weight: normal;
   font-size: 14px;
+  line-height: 18px;
 }
 
 .match-competition {
   grid-column: 2;
   grid-row: 2;
+  font-family: Lora;
+  font-style: normal;
+  font-weight: 500;
   font-size: 14px;
+  line-height: 18px;
 }
