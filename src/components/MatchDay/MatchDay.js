@@ -14,6 +14,7 @@ const MatchDay = ({ matches, date }) => {
             time={match.time}
             competition={match.competition}
             title={match.title}
+            datetime={match.datetime}
           />
         ))}
       </div>
