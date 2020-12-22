@@ -2,9 +2,9 @@ name: Github pages CI
 
 on:
   push:
-  pull_request:
       - '*'
       - '!master'
+  pull_request:
     branches:
       - master
 
