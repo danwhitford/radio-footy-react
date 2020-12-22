@@ -1,0 +1,14 @@
+.filter-button {
+  border: 1px solid grey;
+  padding: 4px;
+  grid-column: 2;
+  grid-row: 1;
+  text-align: center;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.filter-button:hover {
+  background-color: #0e0e0e;
+  color: white;
+}

@@ -1,12 +1,27 @@
 import React, { useEffect, useState } from "react";
 import MatchDay from "./components/MatchDay";
 import "./App.css";
-import FilterOpts from "./components/FilterOpts";
+import FilterButton from "./components/FilterButton";
+import FilterSection from "./components/FilterSection";
 
 function App() {
   const [matchDays, setMatchDays] = useState([]);
   const [filterCategory, setFilterCategory] = useState("None");
   const [filterValue, setFilterValue] = useState("None");
+  const [showFilters, setShowFilters] = useState(false);
+
+  let competitions = matchDays
+  .flatMap((day) => day.matches.map((match) => match.competition))
+  .filter((x, i, a) => a.indexOf(x) === i)
+  .sort();
+let teams = matchDays
+  .flatMap((day) => day.matches.flatMap((match) => match.title.split(" v ")))
+  .filter((x, i, a) => a.indexOf(x) === i)
+  .sort();
+let stations = matchDays
+  .flatMap((day) => day.matches.map((match) => match.station))
+  .filter((x, i, a) => a.indexOf(x) === i)
+  .sort();
 
   useEffect(() => {
     fetch("https://shaftoe44.github.io/radio-footy/data.json")
@@ -65,22 +80,52 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <FilterOpts
-        filterCategory={filterCategory}
-        filterValue={filterValue}
-        setFilterCategory={setFilterCategory}
-        setFilterValue={setFilterValue}
-        matches={matchDays}
-      />
+    <>
+      <div
+        style={{
+          boxShadow: "0px 2px 2px -2px lightgrey",
+          backgroundColor: showFilters ? "#0e0e0e" : "white",
+        }}
+      >
+        <div
+          className="header-grid"
+          style={{
+            display: "grid",
+            alignItems: "center",
+            verticalAlign: "middle",
+            marginBottom: "20px",
+            padding: "10px",
+            maxWidth: "400px",
+            margin: "0 auto",
+            color: showFilters ? "white" : "#0e0e0e",
+          }}
+        >
+          <FilterButton
+            onClick={() => setShowFilters(!showFilters)}
+            value={!showFilters ? "Show filters" : "Close filters"}
+            invert={showFilters}
+          />
 
-      <h1 className="title">Football</h1>
-      <h2 className="subtitle">on the radio</h2>
+          <h1
+            className="title"
+            style={{
+              gridColumn: 1,
+              gridRow: 1,
+            }}
+          >
+            {showFilters ? "Filter matches" : "Football on the radio"}
+          </h1>
+        </div>
+      </div>
 
-      {filterMatches().map((day) => (
-        <MatchDay key={day.date} date={day.date} matches={day.matches} />
-      ))}
-    </div>
+      <div className="App">
+        {showFilters && <FilterSection teams={teams} stations={stations} competitions={competitions}/>}
+
+        {filterMatches().map((day) => (
+          <MatchDay key={day.date} date={day.date} matches={day.matches} />
+        ))}
+      </div>
+    </>
   );
 }
 
