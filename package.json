@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://wirelessfootball.co.uk",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.6.0",
     "date-fns": "^2.17.0",
