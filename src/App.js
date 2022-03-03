@@ -9,7 +9,7 @@ function App() {
   const [filterValue, setFilterValue] = useState("None");
 
   useEffect(() => {
-    fetch("https://shaftoe44.github.io/radio-footy/data.json")
+    fetch("https://danwhitford.github.io/radio-footy/data.json")
       .then((r) => r.json())
       .then((j) => setMatchDays(j));
   }, [setMatchDays]);
